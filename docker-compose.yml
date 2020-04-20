@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  manager:
+    container_name: manager
+    build:
+      context: ./
+      dockerfile: ManagerDockerfile
+    environment:
+      - DEFAULT_PSW=password
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - /home/lorenzo/Desktop/music:/file_storage/
+    ports:
+      - 7025:7025
