@@ -2,6 +2,7 @@ FROM python
 RUN mkdir manager
 RUN mkdir file_storage
 WORKDIR /manager
-COPY /manager requirements.txt /manager/
+COPY /manager /manager
+COPY requirements.txt /manager/
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 CMD ["python","-u", "main.py"]
