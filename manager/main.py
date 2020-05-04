@@ -17,7 +17,7 @@ import subprocess
 
 
 app = Flask(__name__)
-DEFAULT_PSW = os.environ['DEFAULT_PSW']
+DEFAULT_PSW = os.environ.get('DEFAULT_PSW', "password")
 
 @app.route("/")
 def manager():
