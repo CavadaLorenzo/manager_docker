@@ -13,11 +13,13 @@ from flask import jsonify
 from flask import request
 from scp_handler import SCP_handler
 import os, traceback
-import subprocess
+from postgres_DB import PostgresDB
 
 
 app = Flask(__name__)
-DEFAULT_PSW = os.environ.get('DEFAULT_PSW', "password")
+
+try:    DEFAULT_PSW = os.environ.get('DEFAULT_PSW')
+except:     DEFAULT_PSW = "password"
 
 @app.route("/")
 def manager():
@@ -26,17 +28,25 @@ def manager():
     to perform the copy. A json with the result of the operation will be returned.
     """
     try:
+        db = PostgresDB()
         server_ip = request.args.get('server_ip')
         server_port = request.args.get('server_port')
         filename = request.args.get('filename')
+        print(f"FILENAME: {filename}")
 
         scp = SCP_handler(server_ip, server_port, "root", DEFAULT_PSW)
         print("\nConnection established with server: " + server_ip + ":" + server_port)
-        check = True
         print("Searching file: " + filename)
         local_filename = "/file_storage/" + filename
-        check = scp.upload_file(local_filename)
-        print("File: " + filename + " moved to server: " + server_ip + ":" + server_port + "\n")
+
+        server = db.search_server(server_ip, server_port)
+        if not db.check_file_existence(server[0], filename):            
+            check = scp.upload_file(local_filename)
+            db.add_new_file(filename, server[0])
+            print("File: " + filename + " moved to server: " + server_ip + ":" + server_port + "\n")
+        else:
+            check = False
+            print("File already on the FTP server")
         return jsonify({'result': True})
     except Exception as ex:
         print(ex.__class__, ex.__class__.__name__, flush=True)

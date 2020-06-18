@@ -15,7 +15,7 @@ class SCP_handler:
         """
         self.client = paramiko.SSHClient()
         self.client.load_system_host_keys()
-        self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())        
         self.client.connect(host, port, user, password)
             
     def upload_file(self, local_filename):

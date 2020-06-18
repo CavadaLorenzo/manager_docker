@@ -3,3 +3,4 @@ paramiko==2.6.0
 requests==2.21.0
 scp==0.13.2
 simplejson==3.16.0
+psycopg2==2.8.5

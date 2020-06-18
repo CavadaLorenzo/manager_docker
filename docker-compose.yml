@@ -7,6 +7,11 @@ services:
       dockerfile: ManagerDockerfile
     environment:
       - DEFAULT_PSW=password
+      - POSTGRES_IP=192.168.1.190
+      - POSTGRES_PORT=54320
+      - POSTGRES_USER=admin
+      - POSTGRES_DB_NAME=servers
+      - POSTGRES_PASSWORD=admin
       - PYTHONUNBUFFERED=1
     volumes:
       - /home/lorenzo/Desktop/music:/file_storage/
