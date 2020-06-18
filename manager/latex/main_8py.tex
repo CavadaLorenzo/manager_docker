@@ -1,0 +1,51 @@
+\hypertarget{main_8py}{}\section{main.\+py File Reference}
+\label{main_8py}\index{main.\+py@{main.\+py}}
+
+
+The main class.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{main_8py_a774cbc5abddfcdb67dc04baf72feefc3}{main.\+manager} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8py_a5fa94f0581009434c7a63791944d6ff4}\label{main_8py_a5fa94f0581009434c7a63791944d6ff4}} 
+{\bfseries main.\+app} = Flask(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{main_8py_aa52e6711bf12d65a97bbda022df09a43}\label{main_8py_aa52e6711bf12d65a97bbda022df09a43}} 
+{\bfseries main.\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+SW} = os.\+environ.\+get(\textquotesingle{}D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+SW\textquotesingle{}, \char`\"{}password\char`\"{})
+\item 
+\mbox{\Hypertarget{main_8py_a800974c07a8e7de9888fff8cd98a827e}\label{main_8py_a800974c07a8e7de9888fff8cd98a827e}} 
+{\bfseries main.\+debug}
+\item 
+\mbox{\Hypertarget{main_8py_a0c5b8ab1603c8c5b8db5e1128a757fea}\label{main_8py_a0c5b8ab1603c8c5b8db5e1128a757fea}} 
+{\bfseries main.\+True}
+\item 
+\mbox{\Hypertarget{main_8py_a0cf58d9b4a444874a8cf80fdf162b0fb}\label{main_8py_a0cf58d9b4a444874a8cf80fdf162b0fb}} 
+{\bfseries main.\+host}
+\item 
+\mbox{\Hypertarget{main_8py_a12fac67ac230690557ab76d3faa71d8c}\label{main_8py_a12fac67ac230690557ab76d3faa71d8c}} 
+{\bfseries main.\+port}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The main class. 
+
+The script will copy a specific file to a specif server using ssh. Everything starts when a get request will arrive to the port 7025. This get request needs to provide a server IP + P\+O\+RT where a file must to be copy and, of course, the filename. This script is designed to run in docker so will take as enviroment variable the defualt password used for all the ssh conenction. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8py_file_a774cbc5abddfcdb67dc04baf72feefc3}\label{main_8py_file_a774cbc5abddfcdb67dc04baf72feefc3}} 
+\index{main.\+py@{main.\+py}!manager@{manager}}
+\index{manager@{manager}!main.\+py@{main.\+py}}
+\subsubsection{\texorpdfstring{manager()}{manager()}}
+{\footnotesize\ttfamily def main.\+manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}In this method will be created an instance of SCP_handler and it will be used
+to perform the copy. A json with the result of the operation will be returned.
+\end{DoxyVerb}
+ 

@@ -1,0 +1,53 @@
+\hypertarget{classscp__handler_1_1SCP__handler}{}\section{scp\+\_\+handler.\+S\+C\+P\+\_\+handler Class Reference}
+\label{classscp__handler_1_1SCP__handler}\index{scp\+\_\+handler.\+S\+C\+P\+\_\+handler@{scp\+\_\+handler.\+S\+C\+P\+\_\+handler}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classscp__handler_1_1SCP__handler_ad6b1c2ed42208324e25394f895752851}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, host, port, user, password=\char`\"{}password\char`\"{})
+\item 
+def \hyperlink{classscp__handler_1_1SCP__handler_a4441d5d1a6dbc37f394ba21a1d8a0ee2}{upload\+\_\+file} (self, local\+\_\+filename)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classscp__handler_1_1SCP__handler_a4e8a17da2ea659fb007e1feb681083b6}\label{classscp__handler_1_1SCP__handler_a4e8a17da2ea659fb007e1feb681083b6}} 
+{\bfseries client}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}this class will be handle all the scp request. It will create an ssh 
+connection and will perform the transfer
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classscp__handler_1_1SCP__handler_ad6b1c2ed42208324e25394f895752851}\label{classscp__handler_1_1SCP__handler_ad6b1c2ed42208324e25394f895752851}} 
+\index{scp\+\_\+handler\+::\+S\+C\+P\+\_\+handler@{scp\+\_\+handler\+::\+S\+C\+P\+\_\+handler}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!scp\+\_\+handler\+::\+S\+C\+P\+\_\+handler@{scp\+\_\+handler\+::\+S\+C\+P\+\_\+handler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def scp\+\_\+handler.\+S\+C\+P\+\_\+handler.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{host,  }\item[{}]{port,  }\item[{}]{user,  }\item[{}]{password = {\ttfamily \char`\"{}password\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Here will be established the connection with the given sidecar server.
+@:parameter
+host: represent the IP of the sidecar
+port: represent the port where the sidecar is listening
+password: represent the super user password of the sidecar
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classscp__handler_1_1SCP__handler_a4441d5d1a6dbc37f394ba21a1d8a0ee2}\label{classscp__handler_1_1SCP__handler_a4441d5d1a6dbc37f394ba21a1d8a0ee2}} 
+\index{scp\+\_\+handler\+::\+S\+C\+P\+\_\+handler@{scp\+\_\+handler\+::\+S\+C\+P\+\_\+handler}!upload\+\_\+file@{upload\+\_\+file}}
+\index{upload\+\_\+file@{upload\+\_\+file}!scp\+\_\+handler\+::\+S\+C\+P\+\_\+handler@{scp\+\_\+handler\+::\+S\+C\+P\+\_\+handler}}
+\subsubsection{\texorpdfstring{upload\+\_\+file()}{upload\_file()}}
+{\footnotesize\ttfamily def scp\+\_\+handler.\+S\+C\+P\+\_\+handler.\+upload\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{local\+\_\+filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}this method will upload the given file (local_filename) in the /home/
+direcotory on the sidecar. It will return True if the porcess end without
+errors or False if any exception will be throw.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scp\+\_\+handler.\+py\end{DoxyCompactItemize}
