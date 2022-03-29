@@ -1,5 +1,5 @@
 Flask==1.1.2
-paramiko==2.6.0
+paramiko==2.10.1
 requests==2.21.0
 scp==0.13.2
 simplejson==3.16.0
